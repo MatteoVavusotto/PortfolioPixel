@@ -1,0 +1,1040 @@
+@keyframes mario-jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes magic-coin {
+  0% {
+    transform: translateY(0) rotate(180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-100%) rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(720deg);
+    opacity: 0;
+  }
+}
+@keyframes pixel-navbar-in {
+  0% {
+    max-height: 0;
+  }
+  25% {
+    max-height: 25%;
+  }
+  50% {
+    max-height: 50%;
+  }
+  75% {
+    max-height: 25%;
+  }
+  100% {
+    max-height: 100%;
+  }
+}
+@keyframes pixel-navbar-out {
+  0% {
+    max-height: 100%;
+  }
+  25% {
+    max-height: 75%;
+  }
+  50% {
+    max-height: 50%;
+  }
+  75% {
+    max-height: 75%;
+  }
+  100% {
+    max-height: 0;
+  }
+}
+@keyframes pixel-x {
+  0% {
+    transform: translateY(0%) rotate(0deg);
+  }
+  25% {
+    transform: translateY(25%) rotate(56deg);
+  }
+  50% {
+    transform: translateY(50%) rotate(112deg);
+  }
+  75% {
+    transform: translateY(75%) rotate(168deg);
+  }
+  100% {
+    transform: translateY(155%) rotate(225deg);
+  }
+}
+@keyframes pixel-x-invert {
+  0% {
+    transform: translateY(-100%) rotate(225deg);
+  }
+  25% {
+    transform: translateY(-75%) rotate(168deg);
+  }
+  50% {
+    transform: translateY(-50%) translateX(1rem) rotate(112deg);
+  }
+  75% {
+    transform: translateY(-25%) rotate(56deg);
+  }
+  100% {
+    transform: translateY(0%) rotate(0deg);
+  }
+}
+@keyframes pixel-y {
+  0% {
+    transform: translateY(0%) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-25%) rotate(-56deg);
+  }
+  50% {
+    transform: translateY(-50%) rotate(-112deg);
+  }
+  75% {
+    transform: translateY(-75%) rotate(-168deg);
+  }
+  100% {
+    transform: translateY(-155%) rotate(-225deg);
+  }
+}
+@keyframes pixel-y-invert {
+  0% {
+    transform: translateY(100%) rotate(-225deg);
+  }
+  25% {
+    transform: translateY(75%) rotate(-168deg);
+  }
+  50% {
+    transform: translateY(50%) translateX(-1rem) rotate(-112deg);
+  }
+  75% {
+    transform: translateY(25%) rotate(-56deg);
+  }
+  100% {
+    transform: translateY(0%) rotate(0deg);
+  }
+}
+@keyframes moveMushroom {
+  0% {
+    left: -3rem;
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.5);
+  }
+  50% {
+    left: 36%;
+    opacity: 1;
+    transform: scale(1);
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    left: -3rem;
+    opacity: 0;
+  }
+}
+@keyframes flash-luigi {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+@keyframes grow-luigi {
+  90% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0.5;
+  }
+}
+.navbar__menu-icon {
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 5;
+}
+.navbar__menu-icon__burger {
+  background-color: rgb(210, 105, 30);
+  display: block;
+  width: 1.5rem;
+  height: 0.25rem;
+  position: relative;
+  transition: all 0.4s ease-out;
+  z-index: 3;
+  cursor: pointer;
+}
+.navbar__menu-icon__burger::after, .navbar__menu-icon__burger::before {
+  background-color: rgb(210, 105, 30);
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+}
+.navbar__menu-icon__burger::before {
+  top: 0.4rem;
+}
+.navbar__menu-icon__burger::after {
+  bottom: 0.4rem;
+}
+.navbar__menu-check {
+  display: none;
+}
+.navbar__menu-check:checked ~ .navbar__menu-icon .navbar__menu-icon__burger {
+  background-color: transparent;
+}
+.navbar__menu-check:checked ~ .navbar__menu-icon .navbar__menu-icon__burger::before {
+  animation: pixel-y 1s ease-in-out forwards;
+  background-color: rgb(255, 215, 0);
+}
+.navbar__menu-check:checked ~ .navbar__menu-icon .navbar__menu-icon__burger::after {
+  animation: pixel-x 1s ease-in-out forwards;
+  background-color: rgb(255, 215, 0);
+}
+.navbar__menu-check:not(:checked) ~ .navbar__menu-icon .navbar__menu-icon__burger {
+  background-color: rgb(210, 105, 30);
+  transition: background-color 1.5s ease-in-out;
+}
+.navbar__menu-check:not(:checked) ~ .navbar__menu-icon .navbar__menu-icon__burger::before {
+  animation: pixel-x-invert 1s ease-in-out forwards;
+  background-color: rgb(210, 105, 30);
+  transition: background-color 2s ease-in-out;
+}
+.navbar__menu-check:not(:checked) ~ .navbar__menu-icon .navbar__menu-icon__burger::after {
+  animation: pixel-y-invert 1s ease-in-out forwards;
+  background-color: rgb(210, 105, 30);
+  transition: background-color 2s ease-in-out;
+}
+.navbar__menu-check:checked ~ .navbar__overlay, .navbar__menu-check:checked ~ .navbar__overlay .overlay__links {
+  animation: pixel-navbar-in 1s ease-in-out forwards;
+}
+.navbar__menu-check:not(:checked) ~ .navbar__overlay, .navbar__menu-check:not(:checked) ~ .navbar__overlay .pverlay__links {
+  animation: pixel-navbar-out 1s ease-in-out forwards;
+}
+.navbar__overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url(../img/brick-wall.JPG);
+  background-size: contain;
+  background-repeat: repeat;
+  opacity: 0.98;
+  overflow: hidden;
+  height: 100%;
+  position: sticky;
+  z-index: 1;
+  box-shadow: 0.2rem 0.2rem 0 rgb(22, 22, 22);
+}
+.navbar__overlay__links {
+  height: 100%;
+  overflow: hidden;
+  list-style: none;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__overlay__links a {
+  color: rgb(255, 215, 0);
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.3rem 0.3rem rgb(99, 49, 14);
+}
+.navbar__overlay__links a:hover {
+  color: white;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0.3rem 0.3rem rgb(99, 49, 14), 0.5rem 0.5rem rgb(99, 49, 14);
+}
+
+#hero {
+  background-image: url(../img/sfondo_mario_min.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  overflow: hidden;
+}
+#hero .hero__container {
+  height: 90%;
+  margin: auto;
+  text-align: center;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hero .hero__container__view {
+  padding: 0.5rem;
+  background-color: rgba(99, 49, 14, 0.6);
+  border-radius: 1rem;
+  margin: 0.5rem;
+  line-height: 3rem;
+  box-shadow: 0.3rem 0.3rem 0 rgb(99, 49, 14);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hero .hero__container__view h1 {
+  color: rgb(255, 215, 0);
+  font-size: 1.7rem;
+  padding-bottom: 2rem;
+  line-height: 3rem;
+  text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.4rem 0.4rem rgb(99, 49, 14);
+}
+#hero .hero__container__view h2 {
+  color: rgb(255, 245, 214);
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.3rem 0.3rem rgb(99, 49, 14);
+}
+
+#about .about__container {
+  display: grid;
+  grid-template-columns: 30vw 60vw;
+  position: relative;
+  overflow: hidden;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+#about .about__container-more {
+  display: grid;
+  grid-template-columns: 60vw 30vw;
+  position: relative;
+  overflow: hidden;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+#about .about__container__bio {
+  background-color: rgba(99, 49, 14, 0.6);
+  border-radius: 0.5rem;
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.3rem 0.3rem 0 rgb(99, 49, 14);
+}
+#about .about__container__bio h1 {
+  color: rgb(255, 215, 0);
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.4rem 0.4rem rgb(99, 49, 14);
+}
+#about .about__container__bio p {
+  font-family: "VT323", serif;
+  color: rgb(255, 245, 214);
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  padding: 0.5rem;
+  text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.3rem 0.3rem rgb(99, 49, 14);
+}
+#about .about__container__animation-card {
+  height: auto;
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#about .about__container__animation-card .magic-coin {
+  position: absolute;
+  width: 3rem;
+  bottom: 65%;
+  animation: magic-coin 1s infinite;
+}
+#about .about__container__animation-card .magic-box {
+  position: absolute;
+  width: 4rem;
+  bottom: 58%;
+}
+#about .about__container__animation-card .mario {
+  position: absolute;
+  width: 5rem;
+  top: 43%;
+  animation: mario-jump 1s infinite;
+}
+#about .about__container__animation-card .luigi {
+  position: absolute;
+  width: 2.8rem;
+  top: 50%;
+  left: 25%;
+  transition: transform 1s, opacity 0.5s;
+  animation: flash-luigi 0.5s infinite alternate, grow-luigi 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+#about .about__container__animation-card .mushroom {
+  position: absolute;
+  width: 1.3rem;
+  z-index: 1;
+  top: 56%;
+  left: -3rem;
+  animation: moveMushroom 3s linear infinite;
+}
+
+#projects .projects {
+  padding: 1rem;
+  margin: 1rem 0.6rem;
+  border: 0.5rem solid rgb(255, 215, 0);
+  background-color: rgb(255, 245, 214);
+  box-shadow: 0.5rem 0.5rem 0 rgb(99, 49, 14);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+#projects .projects__bio {
+  text-align: center;
+  width: 100%;
+  margin: 1rem;
+  padding-bottom: 1rem;
+}
+#projects .projects__bio h1 {
+  color: rgb(255, 215, 0);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  padding: 1rem 0;
+  text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.4rem 0.4rem rgb(99, 49, 14);
+}
+#projects .projects__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  gap: 3rem;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+#projects .projects__btns {
+  gap: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#projects .projects__btns__item {
+  background-color: rgb(210, 105, 30);
+  color: rgb(255, 245, 214);
+  padding: 1rem 0.6rem;
+  text-decoration: none;
+  font-size: 0.6rem;
+  border: 0.2rem solid rgb(99, 49, 14);
+  box-shadow: 0.2rem 0.2rem 0 rgb(99, 49, 14);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+#projects .projects__btns__item:hover {
+  color: rgb(255, 215, 0);
+  text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.3rem 0.3rem rgb(99, 49, 14);
+  transition: all 0.1s ease-in-out;
+}
+#projects .projects__btns__item:active {
+  transform: translate(0.2rem, 0.2rem);
+  box-shadow: none;
+}
+#projects .project__item {
+  width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: 0.3rem solid rgb(99, 49, 14);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#projects .project__item p {
+  font-family: "VT323", serif;
+  color: rgb(210, 105, 30);
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  padding-top: 2rem;
+}
+#projects .project__item h4 {
+  font-family: "VT323", serif;
+  color: black;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+#projects .project__item:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#projects .project__item__my-picture {
+  width: 70%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 0.5rem solid rgb(210, 105, 30);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#projects .project__img {
+  border: 0.5rem solid rgb(210, 105, 30);
+  width: 95%;
+  height: 30vh;
+  box-shadow: 0.5rem 0.5rem 0 rgb(99, 49, 14);
+}
+
+#contact {
+  margin: 1rem 0.6rem;
+}
+#contact .contact__container {
+  max-width: 95vw;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  background-color: rgb(255, 215, 0);
+  border: 0.5rem solid rgb(210, 105, 30);
+  max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.5rem 0.5rem 0 rgb(99, 49, 14);
+}
+#contact .contact__container h1 {
+  color: rgb(210, 105, 30);
+  font-size: 1.3rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.3rem 0.3rem rgb(99, 49, 14);
+}
+#contact .contact__container p {
+  animation: flash 2s ease-in-out;
+  padding-top: 0.5rem;
+  color: rgb(99, 49, 14);
+  font-family: "VT323", serif;
+  font-size: 1.3rem;
+  text-align: center;
+}
+#contact .contact__form {
+  text-align: center;
+}
+#contact .contact__form input,
+#contact .contact__form textarea {
+  width: 90%;
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  border: 0.3rem solid rgb(210, 105, 30);
+  font-size: 1rem;
+  font-family: "VT323", serif;
+  background-color: rgb(255, 245, 214);
+  color: rgb(99, 49, 14);
+  text-transform: uppercase;
+  max-width: 60rem;
+}
+#contact .contact__form .btn-submit {
+  font-family: "Press Start 2P", serif;
+  cursor: pointer;
+  transition: transform 0.1s;
+  background-color: rgb(210, 105, 30);
+  color: rgb(255, 245, 214);
+  padding: 1.3rem 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  border: 0.2rem solid rgb(99, 49, 14);
+  box-shadow: 0.2rem 0.2rem 0 rgb(99, 49, 14);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+#contact .contact__form .btn-submit:hover {
+  color: rgb(255, 215, 0);
+  text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.3rem 0.3rem rgb(99, 49, 14);
+  transition: all 0.1s ease-in-out;
+}
+#contact .contact__form .btn-submit:active {
+  transform: translate(0.2rem, 0.2rem);
+  box-shadow: none;
+}
+
+#footer .footer__container {
+  background-color: rgb(210, 105, 30);
+  border-top: 0.5rem solid rgb(99, 49, 14);
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+#footer .footer__info {
+  border-right: 0.3rem solid rgb(255, 215, 0);
+  width: 90%;
+  padding: 0.5rem;
+}
+#footer .footer__info p {
+  font-family: "VT323", serif;
+  color: rgb(255, 245, 214);
+  font-size: 1rem;
+}
+#footer .footer__info h5 {
+  font-family: "Press Start 2P", serif;
+  color: rgb(255, 215, 0);
+  margin-top: 0.5rem;
+}
+#footer .footer__social-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+}
+#footer .footer__social-icons a {
+  text-decoration: none;
+  color: rgb(255, 245, 214);
+  padding: 1rem 0;
+}
+#footer .footer__social-icons a:hover, #footer .footer__social-icons a:active {
+  color: rgb(255, 215, 0);
+}
+
+@media screen and (min-width: 767px) {
+  .navbar {
+    height: 23vh;
+  }
+  .navbar__overlay {
+    position: absolute;
+  }
+  .navbar__overlay__links {
+    gap: 2rem;
+  }
+  .navbar__overlay__links a {
+    font-size: 1.6rem;
+    text-shadow: 0.3rem 0.3rem rgb(99, 49, 14), 0.5rem 0.5rem rgb(99, 49, 14);
+  }
+  .navbar__overlay__links a:hover {
+    text-shadow: 0.4rem 0.4rem rgb(99, 49, 14), 0.6rem 0.6rem rgb(99, 49, 14);
+  }
+  .navbar__menu-icon__burger {
+    width: 2.5rem;
+    height: 0.5rem;
+    margin: 1rem;
+  }
+  .navbar__menu-icon__burger::before {
+    top: 0.8rem;
+  }
+  .navbar__menu-icon__burger::after {
+    bottom: 0.8rem;
+  }
+  #hero {
+    background-image: url(../img/sfondo_mario.png);
+    background-position: center top;
+  }
+  #hero .hero__container__view {
+    width: 85%;
+  }
+  #hero .hero__container__view h1 {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    margin: 1rem 0;
+  }
+  #hero .hero__container__view h2 {
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+    margin: 1rem 0;
+  }
+  #about .about__container__bio {
+    margin: 1.5rem;
+  }
+  #about .about__container__bio h1 {
+    font-size: 1.8rem;
+    padding: 1rem;
+    text-shadow: 0.3rem 0.3rem rgb(99, 49, 14), 0.5rem 0.5rem rgb(99, 49, 14);
+  }
+  #about .about__container__bio p {
+    font-size: 1.5rem;
+  }
+  #about .about__container__animation-card .magic-coin {
+    width: 3rem;
+  }
+  #about .about__container__animation-card .magic-box {
+    width: 5rem;
+  }
+  #about .about__container__animation-card .mario {
+    width: 6rem;
+  }
+  #about .about__container__animation-card .luigi {
+    width: 5rem;
+    top: 40%;
+  }
+  #about .about__container__animation-card .mushroom {
+    width: 2rem;
+    top: 55%;
+  }
+  #projects {
+    margin: 2.5rem;
+  }
+  #projects .projects__btns {
+    gap: 2.8rem;
+  }
+  #projects .projects__btns__item {
+    width: 9rem;
+    font-size: 0.7rem;
+  }
+  #projects .projects__btns__item .fab,
+  #projects .projects__btns__item .fas {
+    font-size: 1.3rem;
+  }
+  #projects .project__img {
+    height: 50vh;
+  }
+  #projects .project__item__my-picture {
+    width: 50%;
+  }
+  #contact {
+    margin: 2.5rem;
+  }
+  #contact .contact__container {
+    margin: 2rem auto;
+  }
+  #contact .contact__container h1 {
+    font-size: 2.8rem;
+    padding: 1.5rem;
+    text-shadow: 0.3rem 0.3rem rgb(99, 49, 14), 0.5rem 0.5rem rgb(99, 49, 14);
+  }
+  #footer .footer__info {
+    padding: 1rem;
+  }
+  #footer .footer__info p {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #hero {
+    background-position: center bottom;
+  }
+  #hero .hero__container__view {
+    width: 65%;
+  }
+  #about .about__container__bio {
+    margin: 2rem;
+  }
+  #about .about__container__bio h1 {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  #about .about__container__bio p {
+    font-size: 1.8rem;
+    padding: 2rem;
+    line-height: 2rem;
+  }
+  #about .about__container__animation-card .magic-coin {
+    width: 4rem;
+  }
+  #about .about__container__animation-card .magic-box {
+    width: 6rem;
+  }
+  #about .about__container__animation-card .mario {
+    width: 7rem;
+  }
+  #about .about__container__animation-card .luigi {
+    width: 6rem;
+    left: 25%;
+  }
+  #about .about__container-more {
+    margin-left: 3rem;
+  }
+  #projects {
+    margin: 4.5rem;
+  }
+  #projects .projects {
+    padding: 2rem;
+  }
+  #projects .projects__container {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    min-height: 80rem;
+  }
+  #projects .project__img {
+    width: 100%;
+    height: 40vh;
+  }
+  #projects .project__item {
+    padding: 1.5rem;
+  }
+  #projects .project__item:nth-child(odd) {
+    border-right: 0.2rem solid rgb(99, 49, 14);
+    box-shadow: 0.2rem 0 0 rgb(99, 49, 14);
+    outline-offset: -5px;
+  }
+  #projects .project__item__my-picture {
+    width: 70%;
+    max-width: 20rem;
+  }
+  #contact {
+    margin: 5rem;
+  }
+  #contact .contact__container .btn-submit {
+    margin: 2rem 0;
+  }
+  #footer .footer__container {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #hero {
+    background-position: bottom;
+  }
+  #hero .hero__container__view {
+    width: 55%;
+  }
+  #about .about__container__animation-card .magic-coin {
+    top: 20%;
+  }
+  #about .about__container__animation-card .luigi {
+    left: 30%;
+  }
+  #contact {
+    margin: 2.5rem;
+  }
+  #contact .contact__container {
+    margin: 2rem auto;
+  }
+  #contact .contact__container input,
+  #contact .contact__container textarea {
+    width: 95%;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+  #contact .contact__container .btn-submit {
+    font-size: 2rem;
+  }
+  #footer .footer__info p {
+    font-size: 2rem;
+  }
+  #footer .footer__info h5 {
+    font-size: 1.4rem;
+  }
+  #footer .footer__social-icons a {
+    padding: 1.5rem 0;
+  }
+  #footer .footer__social-icons .fab,
+  #footer .footer__social-icons .fas {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 2000px) {
+  #hero {
+    background-position: center top;
+  }
+  #hero .hero__container__view h1 {
+    font-size: 5rem;
+    line-height: 10rem;
+    text-shadow: 0.6rem 0.6rem rgb(99, 49, 14), 0.8rem 0.8rem rgb(99, 49, 14);
+  }
+  #hero .hero__container__view h2 {
+    font-size: 3rem;
+    line-height: 5rem;
+    text-shadow: 0.6rem 0.6rem rgb(99, 49, 14), 0.8rem 0.8rem rgb(99, 49, 14);
+  }
+  #about .about__container__bio {
+    padding: 3rem;
+  }
+  #about .about__container__bio h1 {
+    font-size: 5rem;
+    text-shadow: 0.6rem 0.6rem rgb(99, 49, 14), 0.8rem 0.8rem rgb(99, 49, 14);
+  }
+  #about .about__container__bio p {
+    font-size: 3rem;
+    line-height: 4rem;
+    text-shadow: 0.4rem 0.4rem rgb(99, 49, 14), 0.7rem 0.7rem rgb(99, 49, 14);
+  }
+  #about .about__container__animation-card .magic-coin {
+    width: 6rem;
+  }
+  #about .about__container__animation-card .magic-box {
+    width: 8rem;
+  }
+  #about .about__container__animation-card .mario {
+    width: 10rem;
+  }
+  #about .about__container__animation-card .luigi {
+    width: 10rem;
+    left: 30%;
+  }
+  #about .about__container__animation-card .mushroom {
+    width: 4rem;
+  }
+  #projects .projects__bio {
+    padding: 4rem 0;
+  }
+  #projects .projects__bio h1 {
+    font-size: 5rem;
+    text-shadow: 0.6rem 0.6rem rgb(99, 49, 14), 0.8rem 0.8rem rgb(99, 49, 14);
+  }
+  #projects .projects__btns {
+    gap: 8rem;
+    margin: 4rem 0;
+  }
+  #projects .projects__btns__item {
+    width: 16rem;
+    background-color: rgb(210, 105, 30);
+    color: rgb(255, 245, 214);
+    padding: 1.5rem 1.5rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    border: 0.2rem solid rgb(99, 49, 14);
+    box-shadow: 0.8rem 0.8rem 0 rgb(99, 49, 14);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+  }
+  #projects .projects__btns__item:hover {
+    color: rgb(255, 215, 0);
+    text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.3rem 0.3rem rgb(99, 49, 14);
+    transition: all 0.1s ease-in-out;
+  }
+  #projects .projects__btns__item:active {
+    transform: translate(0.2rem, 0.2rem);
+    box-shadow: none;
+  }
+  #projects .projects__btns .fab,
+  #projects .projects__btns .fas {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+  }
+  #projects .project__item {
+    border-bottom: 0.5rem solid rgb(99, 49, 14);
+  }
+  #projects .project__item p {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  #projects .project__item h4 {
+    font-size: 3rem;
+    padding-top: 1rem;
+  }
+  #projects .project__item__my-picture {
+    width: 60%;
+    max-width: 100rem;
+    border: 0.8rem solid rgb(210, 105, 30);
+  }
+  #projects .project__img {
+    border: 0.8rem solid rgb(210, 105, 30);
+    width: 100%;
+    height: 50vh;
+    box-shadow: 0.8rem 0.8rem 0 rgb(99, 49, 14);
+  }
+  #contact .contact__container {
+    max-width: 100rem;
+  }
+  #contact .contact__container input,
+  #contact .contact__container textarea {
+    font-size: 1.8rem;
+  }
+  #contact .contact__container h1 {
+    font-size: 5rem;
+    padding-bottom: 4rem;
+    text-shadow: 0.6rem 0.6rem rgb(99, 49, 14), 0.7rem 0.7rem rgb(99, 49, 14);
+  }
+  #contact .contact__container p {
+    font-size: 3rem;
+  }
+  #contact .contact__container .btn-submit {
+    background-color: rgb(210, 105, 30);
+    color: rgb(255, 245, 214);
+    padding: 1.3rem 1rem;
+    text-decoration: none;
+    font-size: 4rem;
+    border: 0.2rem solid rgb(99, 49, 14);
+    box-shadow: 0.5rem 0.5rem 0 rgb(99, 49, 14);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+  }
+  #contact .contact__container .btn-submit:hover {
+    color: rgb(255, 215, 0);
+    text-shadow: 0.2rem 0.2rem rgb(99, 49, 14), 0.3rem 0.3rem rgb(99, 49, 14);
+    transition: all 0.1s ease-in-out;
+  }
+  #contact .contact__container .btn-submit:active {
+    transform: translate(0.2rem, 0.2rem);
+    box-shadow: none;
+  }
+  #footer .footer__info p {
+    font-size: 3.5rem;
+  }
+  #footer .footer__info h5 {
+    font-size: 2.4rem;
+  }
+  #footer .footer__social-icons a {
+    padding: 2rem 0;
+  }
+  #footer .footer__social-icons .fab,
+  #footer .footer__social-icons .fas {
+    font-size: 5rem;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Press Start 2P", serif;
+  background-color: #5C94FC;
+}
+
+.navbar {
+  position: fixed;
+  padding: 1rem 0.3rem;
+  height: 15vh;
+  width: 100vw;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: start;
+}
+
+#hero {
+  width: 100vw;
+  height: 100vh;
+}
+
+#about,
+#projects,
+#contact {
+  width: auto;
+  height: auto;
+}
+
+#footer {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+}/*# sourceMappingURL=style.css.map */

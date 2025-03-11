@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css" >
+    <title>8-Pixel Portfolio </title>
+  </head>
+  <body>
+    <header >
+      <div class="navbar">
+        <input type="checkbox" class="navbar__menu-check" id="navbar__menu-check">
+        <label for="navbar__menu-check" class="navbar__menu-icon">
+          <span class="navbar__menu-icon__burger"></span>
+        </label>
+        <nav class="navbar__overlay">
+          <ul class="navbar__overlay__links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="hero">
+      <div class="hero__container">
+        <div class="hero__container__view">
+          <h1>Welcome to my portfolio! </h1>
+          <h2>Explore my creativity, journey,and the projects</h2>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="about__container">
+        <div class="about__container__animation-card">      
+          <img src="/assets/img/magic-coin.png" alt="magic-coin" class="magic-coin">
+          <img src="/assets/img/magic-box.png" alt="mario-box" class="magic-box">
+          <img src="/assets/img/mario.png" alt="mario" class="mario">
+        </div>
+        <div class="about__container__bio">
+          <h1>About Me</h1>
+          <p>Hi, I'm Matteo!
+            I'm a web developer and a huge fan of the Mario series. I love creating fun and interactive projects, always focused on delivering high-quality solutions that meet user needs and business goals. I’m constantly looking to learn and grow as a developer, particularly in collaborative team environments where we can share knowledge and achieve the best outcomes together.</p>
+        </div>
+    </div>
+    <div class="about__container-more">
+      <div class="about__container__bio">
+        <h1> Little More</h1>
+        <p>In addition to my technical skills, I have a variety of interests, ranging from the world of football to wine. I’ve spent much of my life working in restaurants, where I’ve developed strong leadership and communication skills. I like to call myself ‘a social animal’, as I thrive in team settings and enjoy leading projects to successful completion.</p>
+      </div>
+      <div class="about__container__animation-card">      
+        <img src="/assets/img/mushroom.png" alt="mushroom" class="mushroom">
+        <img src="/assets/img/luigi.png" alt="luigi" class="luigi">
+    </div>
+  </div>
+    </section>
+    <section id="projects">
+      <div class="projects">
+      <div class="projects__bio">
+        <h1>These are my projects</h1>
+      </div>
+      <div class="projects__container">
+        <div class="project__item">
+          <a href="./error.html">
+          <img src="/assets/img/sfondo-xp-1.jpg" alt="project-1" class="project__img">
+        </a>
+          <p>This is my portfolio, created with a more professional approach. We used SASS, mixins, functions, and JavaScript. The project is still under construction.</p>
+        
+          <div class="projects__btns">
+            <a href="https://matteovavusotto.github.io/Portfolio/" class="projects__btns__item">
+              <i class="fas fa-eye"></i> Preview
+            </a>
+            <a href="https://github.com/MatteoVavusotto/Portfolio" class="projects__btns__item">
+              <i class="fab fa-github"></i> Github
+            </a>
+          </div>
+        </div>
+        <div class="project__item">
+        <a href="./error.html">
+          <img src="/assets/img/sfondo-xp-2.jpeg" alt="project-1" class="project__img">
+        </a>
+          <p>This is a small project/exercise I created while following the lessons on Start2Impact.</p>
+          <div class="projects__btns">
+            <a href="#!" class="projects__btns__item">
+              <i class="fas fa-eye"></i> Preview
+            </a>
+            <a href="#!" class="projects__btns__item">
+              <i class="fab fa-github"></i> Github
+            </a>
+          </div>
+        </div>
+        <div class="project__item">
+        <a href="./error.html">
+          <img src="/assets/img/sfondo-xp-3.jpeg" alt="project-1" class="project__img">
+        </a>
+          <p>This is a portfolio project, but a more personal one. It’s about Super Mario, an important part of my childhood. I experimented with animations and aimed to create a surprising and enjoyable page while keeping a retro style, without using JavaScript</p>
+          <div class="projects__btns">
+            <a href="#!" class="projects__btns__item">
+              <i class="fas fa-eye"></i> Preview
+            </a>
+            <a href="#!" class="projects__btns__item">
+              <i class="fab fa-github"></i> Github
+            </a>
+          </div>
+        </div>
+        <div class="project__item">
+          <img src="./assets/img/my-picture.jpg" alt="mia-foto-profilo" class="project__item__my-picture">
+          <h4>Thank you for taking the time to visit my website. If you happened to see that mischievous Wario, I'm sorry, but that's just how he is. I apologize on his behalf!</h4>      
+        </div>
+    </div>
+  </div>
+    </section>
+    <section id="contact">
+    <div class="contact__container">
+      <h1>CONTATTAMI!</h1>
+      <form id="contact-form" class="contact__form">
+          <input type="text" id="name" name="name" placeholder="Nome" required>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <textarea id="message" name="message" placeholder="Il tuo messaggio..." rows="4" required></textarea>
+          <button type="submit" class="btn-submit" >INVIA!</button>
+      </form>
+      <p id="response-message"></p>
+  </div>
+    </section>
+    <footer id="footer">
+      <div class="footer__container">
+        <div class="footer__social-icons">
+          <a href="https://www.facebook.com/share/19pfvnqkoX/">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a href="https://www.instagram.com/vavusotto_matteo/">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/matteo-vavusotto-56b44a99/">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="#!">
+            <i class="fab fa-github fa-2x"></i>
+            </a>
+        </div>
+        <div class="footer__info">
+          <h5>Location:</h5> <p>Parma, PR 43125, Italy</p>
+          <h5>Work:</h5> <p>"Trattoria il Cortile" Restaurant & Catering</p>
+          <h5>Position:</h5> <p>Restaurant Manager</p>
+          <h5>Expertise:</h5> <p>Wine Specialist</p>
+          <h5>Education:</h5> <p>IT Specialist Diploma – IT Rimini</p>
+          <h5>University:</h5> <p>Attended Computer Science and Engineering – University of Cesena</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/89f826503b.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/EmailJs.js"></script>
+  </body>
+</html>

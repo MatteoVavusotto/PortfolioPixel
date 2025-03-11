@@ -1,0 +1,41 @@
+#hero{
+  background-image: url(../img/sfondo_mario_min.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: right;
+  overflow: hidden;
+  .hero{
+    &__container{
+      height: 90%;
+      margin: auto;
+      text-align: center;
+      padding: 0 1rem;
+      @include flex-container (column, center, center);
+
+      &__view{
+        padding: .5rem;
+        background-color: rgba($primary-color-details, .6);
+        border-radius: 1rem;
+        margin:.5rem;
+        line-height: 3rem;
+        @include box-shadow (.3rem, .3rem);
+        @include flex-container (column, center, center);
+
+        h1{
+          color: $secondary-color;
+          font-size: 1.7rem;
+          padding-bottom: 2rem;
+          line-height: 3rem;
+          @include text-shadow (.2rem, .4rem);
+        }
+
+        h2{
+          color: $secondary-color-details;
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+          @include text-shadow (.2rem, .3rem);
+        }
+      }
+    }
+  }
+}

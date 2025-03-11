@@ -1,0 +1,503 @@
+@include media-md {
+  .navbar {
+    height: 23vh;
+
+    &__overlay {
+      position: absolute;
+
+      &__links {
+        gap: 2rem;
+
+        a {
+          font-size: 1.6rem;
+          @include text-shadow(0.3rem, 0.5rem);
+
+          &:hover {
+            @include text-shadow(0.4rem, 0.6rem);
+          }
+        }
+      }
+    }
+
+    &__menu-icon {
+      &__burger {
+        width: 2.5rem;
+        height: 0.5rem;
+        margin: 1rem;
+
+        &::before {
+          top: 0.8rem;
+        }
+
+        &::after {
+          bottom: 0.8rem;
+        }
+      }
+    }
+  }
+
+  #hero {
+    background-image: url(../img/sfondo_mario.png);
+    background-position: center top;
+    .hero__container {
+      &__view {
+        width: 85%;
+
+        h1 {
+          font-size: 2.5rem;
+          line-height: 3.5rem;
+          margin: 1rem 0;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          line-height: 3.5rem;
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+  #about {
+    .about__container {
+      &__bio {
+        margin: 1.5rem;
+
+        h1 {
+          font-size: 1.8rem;
+          padding: 1rem;
+          @include text-shadow(0.3rem, 0.5rem);
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+      &__animation-card {
+        .magic-coin {
+          width: 3rem;
+        }
+
+        .magic-box {
+          width: 5rem;
+        }
+
+        .mario {
+          width: 6rem;
+        }
+
+        .luigi {
+          width: 5rem;
+          top: 40%;
+        }
+
+        .mushroom {
+          width: 2rem;
+          top: 55%;
+        }
+      }
+    }
+  }
+
+  #projects {
+    margin: 2.5rem;
+    .projects {
+      &__btns {
+        gap: 2.8rem;
+
+        &__item {
+          width: 9rem;
+          font-size: 0.7rem;
+
+          .fab,
+          .fas {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    .project {
+      &__img {
+        height: 50vh;
+      }
+
+      &__item__my-picture {
+        width: 50%;
+      }
+    }
+  }
+
+  #contact {
+    margin: 2.5rem;
+    .contact {
+      &__container {
+        margin: 2rem auto;
+
+        h1 {
+          font-size: 2.8rem;
+          padding: 1.5rem;
+          @include text-shadow(.3rem, .5rem);
+        }
+      }
+    }
+  }
+  #footer {
+    .footer {
+      &__info {
+        p {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-lg {
+  #hero{
+    background-position: center bottom;
+
+    .hero__container{
+      &__view{
+        width: 65%;
+      }
+    }
+  }
+
+  #about {
+    .about__container {
+      &__bio {
+        margin: 2rem;
+
+        h1 {
+          font-size: 2rem;
+          padding: 1rem;
+
+        }
+
+        p {
+          font-size: 1.8rem;
+          padding: 2rem;
+          line-height: 2rem;
+        }
+      }
+      &__animation-card {
+        .magic-coin {
+          width: 4rem;
+        }
+
+        .magic-box {
+          width: 6rem;
+        }
+
+        .mario {
+          width: 7rem;
+        }
+
+        .luigi {
+          width: 6rem;
+          left: 25%;
+        }
+      }
+      &-more{
+        margin-left: 3rem;
+      }
+    }
+    
+  }
+
+  #projects{
+    margin: 4.5rem;
+    .projects{
+      padding: 2rem;
+      &__container{
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        min-height: 80rem;
+      }
+    }
+    .project{
+      &__img{
+        width: 100%;
+        height: 40vh;
+      }
+
+      &__item{
+        padding: 1.5rem;
+
+        &:nth-child(odd){
+          border-right: .2rem solid $primary-color-details;
+          @include box-shadow (.2rem, 0);
+          outline-offset: -5px;
+        }
+      }
+      &__item__my-picture{
+        width: 70%;
+        max-width: 20rem;
+      }
+    }
+  }
+
+  #contact{
+    margin: 5rem;
+    .contact{
+      &__container{
+
+        .btn-submit{
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
+
+  #footer{
+    .footer{
+      &__container{
+        padding: 1rem;
+      }
+  }
+ }
+}
+
+
+@include media-xl{
+  #hero {
+    background-position: bottom;
+    .hero__container {
+      &__view {
+        width: 55%;
+      }
+    }
+  }
+
+  #about {
+    .about__container {
+      &__animation-card {
+        .magic-coin {
+          top: 20%;
+        }
+
+        .luigi {
+          left: 30%;
+        }
+      }
+    }
+  }
+
+  #contact {
+    margin: 2.5rem;
+    .contact {
+      &__container {
+        margin: 2rem auto;
+
+        input,
+        textarea{
+          width: 95%;
+          padding: 1rem;
+          margin: 1rem 0;
+          font-size: 1.5rem;
+        }
+
+        .btn-submit{
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  #footer{
+    .footer{
+      &__info{
+        p{
+          font-size: 2rem;
+        }
+  
+        h5{
+          font-size: 1.4rem;
+        }
+      }
+      &__social-icons{
+
+        a{
+          padding: 1.5rem 0;
+        }
+        .fab,
+        .fas{
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-xxl
+{
+  #hero
+  {
+    background-position: center top;
+    .hero__container {
+      &__view {
+
+        h1{
+          font-size: 5rem;
+          line-height: 10rem;
+          @include text-shadow (.6rem, .8rem);
+        }
+
+        h2{
+          font-size: 3rem;
+          line-height: 5rem;
+          @include text-shadow (.6rem, .8rem);
+        }
+      }
+    }
+  }
+  #about {
+    .about__container {
+      &__bio{
+        padding: 3rem;
+        h1{
+          font-size: 5rem;
+          @include text-shadow (.6rem, .8rem);
+        }
+
+        p{
+          font-size: 3rem;
+          line-height: 4rem;
+          @include text-shadow (.4rem, .7rem);
+        }
+      }
+      &__animation-card {
+        .magic-coin {
+          width: 6rem;
+        }
+        .magic-box{
+          width: 8rem;
+        }
+
+        .mario{
+          width: 10rem;
+        }
+
+        .luigi {
+          width: 10rem;
+          left: 30%;
+        }
+
+        .mushroom{
+          width: 4rem;
+        }
+      }
+    }
+  }
+  #projects{
+    .projects{
+      &__bio{
+        padding:4rem 0;
+        h1{
+          font-size: 5rem;
+          @include text-shadow (.6rem, .8rem);
+        }
+      }
+
+      &__btns{
+        gap: 8rem;
+        margin: 4rem 0;
+
+        &__item{
+          width: 16rem;
+          @include button (1.5rem, 1.5rem, 1.8rem, .8rem);
+        }
+
+        .fab,
+        .fas{
+          font-size: 3rem;
+          padding-bottom: 1rem;
+        }
+      }
+    }
+    .project{
+      &__item{
+        border-bottom: .5rem solid $primary-color-details;
+  
+        p{
+          font-size: 3rem;
+          line-height: 3rem;
+        }
+  
+        h4{
+          font-size: 3rem;
+          padding-top: 1rem;
+        }
+  
+  
+        &__my-picture{
+          width: 60%;
+          max-width: 100rem;
+          border: .8rem solid $primary-color;
+        }
+      }
+   
+      &__img{
+        border: .8rem solid $primary-color;
+        width: 100%;
+        height: 50vh;
+        @include box-shadow (.8rem, .8rem);
+      }
+    }
+  }
+
+  #contact {
+    .contact {
+      
+      &__container {
+        max-width: 100rem;
+
+        input,
+        textarea{
+          font-size: 1.8rem;
+        }
+
+        h1{
+          font-size:5rem;
+          padding-bottom: 4rem;
+          @include text-shadow(.6rem,.7rem);
+        }
+  
+        p{    
+          font-size: 3rem;
+        }
+
+        .btn-submit{
+          @include button (1rem, 1.3rem, 4rem, .5rem);
+        }
+      }
+    }
+}
+#footer{
+  .footer{
+    &__info{
+      p{
+        font-size: 3.5rem;
+      }
+
+      h5{
+        font-size: 2.4rem;
+      }
+    }
+    &__social-icons{
+
+      a{
+        padding: 2rem 0;
+      }
+      .fab,
+      .fas{
+        font-size: 5rem;
+      }
+    }
+  }
+}
+}
+
+
+
+
+

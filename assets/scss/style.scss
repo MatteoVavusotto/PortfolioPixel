@@ -1,0 +1,54 @@
+@import 'shortcut';
+@import 'animations';
+@import 'navbar';
+@import 'hero';
+@import 'about';
+@import 'projects';
+@import 'contact';
+@import 'footer';
+@import 'responsive';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $primary-font;
+  background-color: $tertiary-color;
+  width: 100%;
+}
+
+.navbar{
+    position: fixed;
+    padding: 1rem 0.3rem;
+    height: 15vh;
+    width: 100vw;
+    z-index: 5;
+    @include flex-container(row, end, start);
+}
+
+#hero{
+  width: 100vw;
+  height: 100vh;
+}
+
+#about,
+#projects,
+#contact{
+  width: auto;
+  height: auto;
+}
+
+#footer{
+  position: absolute;
+  width: 100vw;
+  height: auto;
+}
+
+
+
+
+
+

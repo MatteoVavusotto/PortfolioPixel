@@ -1,0 +1,94 @@
+#about {
+  .about {
+    &__container {
+      display: grid;
+      grid-template-columns: 30vw 60vw;
+      position: relative;
+      overflow: hidden;
+      gap: 0.5rem;
+      margin: 2rem 0;
+
+      &-more {
+        display: grid;
+        grid-template-columns: 60vw 30vw;
+        position: relative;
+        overflow: hidden;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      &__bio {
+        background-color: rgba($primary-color-details, 0.6);
+        border-radius: 0.5rem;
+        width: 100%;
+        margin: 1rem;
+        @include flex-container(column, center, center);
+        @include box-shadow(0.3rem, 0.3rem);
+
+        h1 {
+          color: $secondary-color;
+          font-size: 1rem;
+          padding: 0.5rem;
+          @include text-shadow(.2rem, .4rem);
+        }
+
+        p {
+          font-family: $secondary-font;
+          color: $secondary-color-details;
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+          padding: 0.5rem;
+          @include text-shadow(.2rem, .3rem);
+        }
+      }
+
+      &__animation-card{
+        height: auto;
+        padding: 2rem 0;
+        position: relative;
+        overflow: hidden;
+        @include flex-container(column,center,center);
+
+        .magic-coin{
+          position:absolute;
+          width: 3rem;
+          bottom: 65%;
+          animation: magic-coin 1s infinite;
+        }
+
+        .magic-box{
+          position: absolute;
+          width: 4rem;
+          bottom: 58%;
+        }
+
+        .mario{
+          position:absolute;
+          width: 5rem;
+          top:43%;
+          animation: mario-jump 1s infinite;
+        }
+
+        .luigi{
+          position: absolute;
+          width: 2.8rem;
+          top: 50%;
+          left:25%;
+          transition: transform 1s, opacity 0.5s;
+          animation: flash-luigi 0.5s infinite alternate, grow-luigi 3s ease-in-out infinite;
+          animation-delay: 1s;
+        }
+
+        .mushroom{
+          position: absolute;
+          width: 1.3rem;
+          z-index: 1;
+          top: 56%;
+          left:-3rem;
+          animation: moveMushroom 3s linear infinite;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,119 @@
+
+  .navbar {
+    &__menu-icon {
+      cursor: pointer;
+      margin-left: auto;
+      z-index: 5;
+
+      &__burger {
+        background-color: $primary-color;
+        display: block;
+        width: 1.5rem;
+        height: 0.25rem;
+        position: relative;
+        transition: all 0.4s ease-out;
+        z-index: 3;
+        cursor: pointer;
+
+        &::after,
+        &::before {
+          background-color: $primary-color;
+          content: "";
+          display: block;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          transition: all 0.4s ease-in-out;
+        }
+
+        &::before {
+          top: 0.4rem;
+        }
+
+        &::after {
+          bottom: 0.4rem;
+        }
+      }
+    }
+    &__menu-check {
+      display: none;
+
+      &:checked ~ .navbar__menu-icon .navbar__menu-icon__burger {
+        background-color: transparent;
+
+        &::before {
+          animation: pixel-y 1s ease-in-out forwards;
+          background-color: $secondary-color;
+        }
+
+        &::after {
+          animation: pixel-x 1s ease-in-out forwards;
+          background-color: $secondary-color;
+        }
+      }
+
+      &:not(:checked) ~ .navbar__menu-icon .navbar__menu-icon__burger {
+        background-color: $primary-color;
+        transition: background-color 1.5s ease-in-out;
+
+        &::before {
+          animation: pixel-x-invert 1s ease-in-out forwards;
+          background-color: $primary-color;
+          transition: background-color 2s ease-in-out;
+        }
+
+        &::after {
+          animation: pixel-y-invert 1s ease-in-out forwards;
+          background-color: $primary-color;
+          transition: background-color 2s ease-in-out;
+        }
+      }
+
+      &:checked ~ .navbar__overlay,
+      &:checked ~ .navbar__overlay .overlay__links {
+        animation: pixel-navbar-in 1s ease-in-out forwards;
+      }
+
+      &:not(:checked) ~ .navbar__overlay,
+      &:not(:checked) ~ .navbar__overlay .pverlay__links {
+        animation: pixel-navbar-out 1s ease-in-out forwards;
+      }
+    }
+
+    &__overlay {
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-image: url(../img/brick-wall.JPG);
+      background-size: contain;
+      background-repeat: repeat;
+      opacity: 0.98;
+      overflow: hidden;
+      height: 100%;
+      position: sticky;
+      z-index: 1;
+      @include box-shadow(0.2rem, 0.2rem, rgb(22, 22, 22));
+
+      &__links {
+        height: 100%;
+        overflow: hidden;
+        list-style: none;
+        gap: 0.5rem;
+        @include flex-container(row, center, center);
+
+        a {
+          color: $secondary-color;
+          text-decoration: none;
+          font-size: 0.8rem;
+          @include text-shadow(0.2rem, 0.3rem);
+
+          &:hover {
+            color: white;
+            transition: all 0.3s ease-in-out;
+            @include text-shadow(0.3rem, 0.5rem);
+          }
+        }
+      }
+    }
+  }
+

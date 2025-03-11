@@ -1,0 +1,47 @@
+#footer{
+  .footer{
+    &__container{
+      background-color: $primary-color;
+      border-top: .5rem solid $primary-color-details;
+      width: 100vh;
+      overflow: hidden;
+      @include flex-container(row-reverse, center,center);
+    }
+
+    &__info{
+      border-right: .3rem solid $secondary-color;
+      width: 90%;
+      padding: .5rem;
+
+      p{
+        font-family: $secondary-font;
+        color:$secondary-color-details;
+        font-size: 1rem;
+      }
+
+      h5{
+        font-family: $primary-font;
+        color: $secondary-color;
+        margin-top: .5rem;
+      }
+    }
+    &__social-icons{
+      @include flex-container (column, space-around, center);
+      width: 20%;
+      height: 100%;
+
+      a{
+        text-decoration: none;
+        color: $secondary-color-details;
+        padding: 1rem 0;
+
+        &:hover,
+        &:active{
+          color: $secondary-color;
+        }
+      }
+
+    }
+  }
+}
+

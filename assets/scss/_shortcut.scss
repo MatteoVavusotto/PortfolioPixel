@@ -1,0 +1,72 @@
+$primary-color: rgb(210, 105, 30);
+$primary-color-details: rgb(99, 49, 14);
+$secondary-color: rgb(255, 215, 0);
+$secondary-color-details: rgb(255, 245, 214);
+$tertiary-color: #5C94FC;
+$primary-font: "Press Start 2P", serif;
+$secondary-font: "VT323", serif;
+
+
+@mixin flex-container($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin text-shadow($x1, $x2) {
+  text-shadow: 
+    #{$x1} #{$x1} $primary-color-details,
+    #{$x2} #{$x2} $primary-color-details;
+}
+
+@mixin box-shadow($x, $y, $color: $primary-color-details) {
+  box-shadow: #{$x} #{$y} 0 $color;
+}
+
+@mixin button ($padding-x, $padding-y, $font-size, $shadow-size) {
+  background-color: $primary-color;
+  color: $secondary-color-details;
+  padding: $padding-y $padding-x;
+  text-decoration: none;
+  font-size: $font-size;
+  border: 0.2rem solid $primary-color-details;
+  @include box-shadow($shadow-size, $shadow-size);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  
+  &:hover {
+    color: $secondary-color;
+    @include text-shadow(0.2rem,0.3rem);
+    transition: all 0.1s ease-in-out;
+  }
+  
+  &:active {
+    transform: translate(0.2rem, 0.2rem);
+    box-shadow: none;
+  }
+}
+
+@mixin media-md{
+  @media screen and (min-width:767px) {
+    @content;
+  }
+}
+
+@mixin media-lg{
+  @media screen and (min-width:1024px) {
+    @content;
+  }
+}
+
+@mixin media-xl{
+  @media screen and (min-width:1440px) {
+    @content;
+  }
+}
+
+@mixin media-xxl{
+  @media screen and (min-width:2000px) {
+    @content;
+  }
+}

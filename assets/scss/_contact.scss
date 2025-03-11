@@ -1,0 +1,58 @@
+#contact{
+  margin: 1rem .6rem;
+  .contact{
+    &__container{
+      max-width: 95vw;
+      margin: 3rem auto;
+      padding: 2rem 1.5rem;
+      background-color: $secondary-color;
+      border: .5rem solid $primary-color;
+      max-width: 65rem;
+      @include flex-container (column, center, center);
+      @include box-shadow (.5rem, .5rem);
+
+      h1{
+        color: $primary-color;
+        font-size:1.3rem;
+        padding-bottom: 2rem;
+        text-align: center;
+        @include text-shadow(.2rem,.3rem);
+      }
+
+      p{
+        animation: flash 2s ease-in-out;
+        padding-top:.5rem;    
+        color: $primary-color-details;
+        font-family: $secondary-font;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+    }
+
+    &__form{
+      text-align: center;
+
+
+      input,
+      textarea{
+        width: 90%;
+        padding: .8rem;
+        margin: .8rem 0;
+        border: .3rem solid $primary-color;
+        font-size: 1rem;
+        font-family: $secondary-font;
+        background-color: $secondary-color-details;
+        color: $primary-color-details;
+        text-transform: uppercase;
+        max-width: 60rem;
+      }
+
+      .btn-submit{
+        font-family: $primary-font;
+        cursor: pointer;
+        transition:transform .1s;
+        @include button (1rem, 1.3rem, 1rem, .2rem);
+      }
+    }
+  }
+}
