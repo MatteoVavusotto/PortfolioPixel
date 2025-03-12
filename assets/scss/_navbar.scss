@@ -75,7 +75,7 @@
       }
 
       &:not(:checked) ~ .navbar__overlay,
-      &:not(:checked) ~ .navbar__overlay .pverlay__links {
+      &:not(:checked) ~ .navbar__overlay .overlay__links {
         animation: pixel-navbar-out 1s ease-in-out forwards;
       }
     }
